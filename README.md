@@ -21,3 +21,5 @@ feat(main) : 매 시도마다 랜덤의 0~9 조건 생성하기
 feat(main) : 조건에 따라 이동하기
 
 feat(main) : 우승자 출력하기
+
+feat(main) : 예외 처리하기

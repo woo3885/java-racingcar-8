@@ -17,6 +17,8 @@ public class Application {
 
 
         public Car(String name) {
+            if (name.length() >= 6)
+                throw new IllegalArgumentException("이름은 5자 이하여야 합니다.");
             this.name = name;
         }
         public String getName() {return this.name;};
