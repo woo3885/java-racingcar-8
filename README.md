@@ -13,3 +13,5 @@
 - 사용자가 잘못된 값을 입력할 경우 IllegalArgumentException을 발생시킨 후 애플리케이션은 종료되어야 한다.
 
 feat(main) : 입력 및 자동차 객체 생성 구현하기
+feat(main) : 차수 입력하기
+feat(main) : 매 시도마다 랜덤의 0~9 조건 생성하기
