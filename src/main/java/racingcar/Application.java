@@ -4,6 +4,7 @@ import camp.nextstep.edu.missionutils.Console;
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -50,6 +51,7 @@ public class Application {
         System.out.println("시도할 횟수는 몇 회인가요?");
         int degrees = Integer.parseInt(Console.readLine());
 
+        System.out.println();
         System.out.println("실행 결과");
         for (int i = 0; i < degrees; i++) {
             for (Car car : carList){
@@ -61,6 +63,21 @@ public class Application {
             System.out.println();
         }
 
+        List<Integer> score = new ArrayList<>();
+
+        for (Car car : carList){
+            score.add(car.getLocation());
+        }
+
+        List<String> winners = new ArrayList<>();
+        for  (Car car : carList){
+            if(car.getLocation() == Collections.max(score)){
+                winners.add(car.getName());
+            }
+        }
+
+        String result = String.join(", ", winners);
+        System.out.println("최종 우승자 : " + result);
 
     }
 }
