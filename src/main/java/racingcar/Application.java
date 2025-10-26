@@ -12,6 +12,7 @@ public class Application {
 
         private final String name;
         private int condition;
+        private int location = 0;
 
 
         public Car(String name) {
@@ -24,6 +25,15 @@ public class Application {
         }
 
         public int getCondition() {return this.condition;}
+
+        public void move() {
+            if (this.condition >= 4) {
+                this.location++;
+            }
+        }
+
+        public int getLocation() {return this.location;}
+
     }
 
 
@@ -40,11 +50,15 @@ public class Application {
         System.out.println("시도할 횟수는 몇 회인가요?");
         int degrees = Integer.parseInt(Console.readLine());
 
+        System.out.println("실행 결과");
         for (int i = 0; i < degrees; i++) {
             for (Car car : carList){
                 car.setConditions();
-                System.out.println(car.getCondition());
+                car.move();
+                System.out.print(car.getName() + " : ");
+                System.out.println("-".repeat(car.getLocation()));
             }
+            System.out.println();
         }
 
 
